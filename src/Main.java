@@ -4,11 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        System.out.print("Type a number!");
-        int firstNumber = Integer.parseInt(reader.nextLine());
-        System.out.print("Type another number!");
-        int secondNumber = Integer.parseInt(reader.nextLine());
-        double result = (double)firstNumber / secondNumber;
-        System.out.println("Division " + firstNumber + " / " + secondNumber + " = " +result);
+        System.out.print("Type in the radius:");
+        int radius = Integer.parseInt(reader.nextLine());
+        double circumreference = (double)radius * 2 * Math.PI;
+        System.out.print("Circumference of the circle: " + circumreference);
     }
 }
