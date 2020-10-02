@@ -1,7 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Martin Motsar");
+        int daysInYear = 365;
+        int hoursInDay = 24;
+        int secondsInHour = 3600;
+        int secondsInYear = daysInYear * hoursInDay * secondsInHour;
+        System.out.print("There are " + secondsInYear + " seconds in a year.");
     }
 }
