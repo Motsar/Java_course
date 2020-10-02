@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        int daysInYear = 365;
-        int hoursInDay = 24;
-        int secondsInHour = 3600;
-        int secondsInYear = daysInYear * hoursInDay * secondsInHour;
-        System.out.print("There are " + secondsInYear + " seconds in a year.");
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Type a number!");
+        int firstNumber = Integer.parseInt(reader.nextLine());
+        System.out.print("Type another number!");
+        int secondNumber = Integer.parseInt(reader.nextLine());
+        double result = (double)firstNumber / secondNumber;
+        System.out.println("Division " + firstNumber + " / " + secondNumber + " = " +result);
     }
 }
