@@ -1,33 +1,26 @@
-import java.util.Collections;
 import java.util.ArrayList;
 
 
 public class Main {
-    public static void removeLast(ArrayList<String> list){
+    public static double average(ArrayList<Integer> list) {
+        // write your code here
         int count = 0;
-        for(String listItem: list){
+        int sum = 0;
+        for(int listItem: list){
             count+=1;
+            sum+=listItem;
         }
-        list.remove(count-1);
+
+        return (double) sum/count;
     }
 
     public static void main(String[] args) {
-        ArrayList<String> brothers = new ArrayList<String>();
-        brothers.add("Dick");
-        brothers.add("Henry");
-        brothers.add("Michael");
-        brothers.add("Bob");
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(3);
+        list.add(2);
+        list.add(7);
+        list.add(2);
 
-        System.out.println("brothers:");
-        System.out.println(brothers);
-
-// sorting brothers
-        Collections.sort(brothers);
-
-// removing the last item
-        removeLast(brothers);
-
-        System.out.println(brothers);
-
+        System.out.println("The average is: " + average(list));
     }
 }
