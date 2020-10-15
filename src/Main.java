@@ -4,15 +4,18 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        System.out.print("Type the password: ");
-        String password = reader.nextLine();
-        while(!password.equals("carrot")){
-            System.out.println("Wrong!");
-            System.out.print("Type the password: ");
-            password = reader.nextLine();
+        int sum = 0;
+        while (true) {
+            int read = Integer.parseInt(reader.nextLine());
+            if (read == 0) {
+                break;
+            }
+
+            // DO SOMETHING HERE
+            sum = sum + read; // sum += read;
+
+            System.out.println("Sum now: " + sum);
         }
-        System.out.println("Right!");
-        System.out.println();
-        System.out.println("The secret is: jryy qbar!");
+        System.out.println("Sum in the end: " + sum);
     }
 }
