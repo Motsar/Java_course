@@ -1,29 +1,23 @@
 import java.util.Scanner;
 
 public class Main {
-    private static boolean drawNumber(int guess, int number, int count) {
-        if (guess < number) {
-            System.out.println("The number is greater, guesses made: " + count);
-            return true;
-        } else if (guess > number) {
-            System.out.println("The number is lesser, guesses made: " + count);
-            return true;
+    public static int least(int number1, int number2) {
+        // write program code here
+        // do not print anything inside the method
+        int least;
+        if (number1 < number2) {
+            least = number1;
+        } else if (number2 < number1) {
+            least = number2;
         } else {
-            System.out.println("Congratulations, your guess is correct!");
-            return false;
+            least = number1;
         }
+        // method needs a return in the end
+        return least;
     }
 
     public static void main(String[] args) {
-            int number = (int)(Math.random() * 101);
-            Scanner reader = new Scanner(System.in);
-            System.out.print("Guess a number: ");
-            int guess = Integer.parseInt(reader.nextLine());
-            int count = 1;
-            while(drawNumber(guess, number, count)){
-                System.out.print("Guess a number: ");
-                guess = Integer.parseInt(reader.nextLine());
-                count++;
-            }
+        int answer = least(2, 7);
+        System.out.println("Least: " + answer);
     }
 }
