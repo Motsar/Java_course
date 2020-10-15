@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class Main {
-    public static double average(ArrayList<Integer> list) {
+
+    public static int greatest(ArrayList<Integer> list) {
         // write your code here
+        Collections.sort(list);
         int count = 0;
-        int sum = 0;
+
         for(int listItem: list){
             count+=1;
-            sum+=listItem;
         }
 
-        return (double) sum/count;
+        return list.get(count-1);
     }
 
     public static void main(String[] args) {
@@ -19,8 +21,7 @@ public class Main {
         list.add(3);
         list.add(2);
         list.add(7);
-        list.add(2);
-
-        System.out.println("The average is: " + average(list));
+        list.add(22);
+        System.out.println("The greatest number is: " + greatest(list));
     }
 }
