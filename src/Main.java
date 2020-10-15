@@ -1,34 +1,33 @@
-import java.util.Scanner;
+import java.util.Collections;
 import java.util.ArrayList;
 
 
 public class Main {
-    public static int countItems(ArrayList<String> list){
+    public static void removeLast(ArrayList<String> list){
         int count = 0;
         for(String listItem: list){
             count+=1;
         }
-        return count;
+        list.remove(count-1);
     }
 
     public static void main(String[] args) {
-        ArrayList<String> words = new ArrayList<String>();
-        Scanner input = new Scanner(System.in);
-        System.out.print("Type a word: ");
-        String word = input.nextLine();
-        words.add(word);
-        while(word.length()!=0){
+        ArrayList<String> brothers = new ArrayList<String>();
+        brothers.add("Dick");
+        brothers.add("Henry");
+        brothers.add("Michael");
+        brothers.add("Bob");
 
-            System.out.print("Type a word: ");
-            word = input.nextLine();
-            if(word.length()!=0){
-                words.add(word);
-            }
-        }
-        System.out.println("There are "+countItems(words)+" items in the list: ");
-        for(String listWord : words){
-            System.out.println(listWord);
-        }
+        System.out.println("brothers:");
+        System.out.println(brothers);
+
+// sorting brothers
+        Collections.sort(brothers);
+
+// removing the last item
+        removeLast(brothers);
+
+        System.out.println(brothers);
 
     }
 }
