@@ -1,22 +1,22 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-        System.out.print("Type in your text: ");
-        String text = reader.nextLine();
-        System.out.println("In reverse order: " + reverseText(text));
-    }
+        ArrayList<String> words = new ArrayList<String>();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Type a word: ");
+        String word = input.nextLine();
+        words.add(word);
+        while(word.length()!=0){
 
-    public static String reverseText(String text) {
-        // write your code here
-        String reverseText = "";
-        int i = text.length() - 1;
-        while (i >= 0) {
-            char symbol = text.charAt(i);
-            reverseText += symbol;
-            i--;
+            System.out.print("Type a word: ");
+            word = input.nextLine();
+            words.add(word);
         }
-        return reverseText;
+        System.out.println("You typed the following words:");
+        for (String listWord : words) {
+            System.out.println( listWord );
+        }
     }
 }
