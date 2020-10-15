@@ -2,21 +2,17 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
+
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<String>();
         Scanner input = new Scanner(System.in);
         System.out.print("Type a word: ");
         String word = input.nextLine();
-        words.add(word);
-        while(word.length()!=0){
-
+        while(!words.contains(word)){
+            words.add(word);
             System.out.print("Type a word: ");
             word = input.nextLine();
-            words.add(word);
         }
-        System.out.println("You typed the following words:");
-        for (String listWord : words) {
-            System.out.println( listWord );
-        }
+        System.out.println("You typed word " +word+ " twice!");
     }
 }
