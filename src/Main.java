@@ -1,8 +1,15 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 public class Main {
+    public static int countItems(ArrayList<String> list){
+        int count = 0;
+        for(String listItem: list){
+            count+=1;
+        }
+        return count;
+    }
 
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<String>();
@@ -14,12 +21,14 @@ public class Main {
 
             System.out.print("Type a word: ");
             word = input.nextLine();
-            words.add(word);
+            if(word.length()!=0){
+                words.add(word);
+            }
         }
-        Collections.sort(words);
-        System.out.println("You typed the following words:");
-        for (String listWord : words) {
-            System.out.println( listWord );
+        System.out.println("There are "+countItems(words)+" items in the list: ");
+        for(String listWord : words){
+            System.out.println(listWord);
         }
+
     }
 }
