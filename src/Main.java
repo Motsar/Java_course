@@ -1,19 +1,23 @@
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
-        DecreasingCounter counter = new DecreasingCounter(2);
+        Menu menulist = new Menu();
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Type in a new meal for menu:");
+        String menuItem = reader.nextLine();
+        menulist.addMeal(menuItem);
+        while(menuItem.length()!=0){
+            System.out.print("Type in a new meal for menu:");
+            menuItem = reader.nextLine();
+            menulist.addMeal(menuItem);
+        }
+        System.out.println("Here is your menu Sir!");
+        menulist.printMeals();
 
-        counter.printValue();
+        menulist.clearMenu();
 
-        counter.decrease();
-        counter.printValue();
-
-        counter.decrease();
-        counter.printValue();
-
-        counter.reset();
-        counter.printValue();
-
-        counter.setInitial();
-        counter.printValue();
+        menulist.printMeals();
     }
 }
