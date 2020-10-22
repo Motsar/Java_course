@@ -6,11 +6,15 @@ public class LyyraCard {
     }
 
     public void payEconomical() {
-        this.balance -= 2.50;
+        if(this.balance>=2.50){
+            this.balance -= 2.50;
+        }
     }
 
     public void payGourmet() {
-        this.balance -= 4.00;
+        if(this.balance>=4.00){
+            this.balance -= 4.00;
+        }
     }
 
     public String toString() {
