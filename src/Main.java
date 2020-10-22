@@ -1,29 +1,19 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
-
 public class Main {
-
-    public static void combine(ArrayList<Integer> first, ArrayList<Integer> second) {
-        // write your code here
-        first.addAll(second);
-    }
-
     public static void main(String[] args) {
-        ArrayList<Integer> list1 = new ArrayList<Integer>();
-        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        DecreasingCounter counter = new DecreasingCounter(2);
 
-        list1.add(4);
-        list1.add(3);
+        counter.printValue();
 
-        list2.add(5);
-        list2.add(10);
-        list2.add(7);
+        counter.decrease();
+        counter.printValue();
 
-        combine(list1, list2);
+        counter.decrease();
+        counter.printValue();
 
-        System.out.println(list1); // prints [4, 3, 5, 10, 7]
+        counter.reset();
+        counter.printValue();
 
-        System.out.println(list2); // prints [5, 10, 7]
+        counter.setInitial();
+        counter.printValue();
     }
 }
