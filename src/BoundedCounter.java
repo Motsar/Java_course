@@ -16,6 +16,10 @@ public class BoundedCounter {
         }
     }
 
+    public int setValue(int counterValue){
+        return value = counterValue;
+    }
+
     public int getValue() {
         return value;
 
