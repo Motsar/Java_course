@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws InterruptedException {
         Scanner reader = new Scanner(System.in);
         BoundedCounter seconds = new BoundedCounter(59);
         BoundedCounter minutes = new BoundedCounter(59);
@@ -18,11 +18,10 @@ public class Main {
         minutes.setValue(m);
         hours.setValue(h);
 
-        int i = 0;
-        while ( i < 121 ) {
+        while ( true ) {
             // like in previous but seconds taken into account
             System.out.println( hours + ":" + minutes + ":" + seconds);   // the current time printed
-
+            Thread.sleep(1000);
             seconds.next();
             if(seconds.getValue()==0){
                 // advance minutes
@@ -31,9 +30,6 @@ public class Main {
                     hours.next();
                 }
             }
-            // if minutes become zero, advance hours
-
-            i++;
         }
 
     }
