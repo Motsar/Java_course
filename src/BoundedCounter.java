@@ -16,6 +16,11 @@ public class BoundedCounter {
         }
     }
 
+    public int getValue() {
+        return value;
+
+    }
+
     public String toString() {
         int digits = String.valueOf(this.value).length();
         if(digits<2){
