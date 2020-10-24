@@ -1,26 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        LyyraCard cardPekka = new LyyraCard(20);
-        LyyraCard cardBrian = new LyyraCard(30);
+        BoundedCounter counter = new BoundedCounter(4);
+        System.out.println("Value at start: " + counter );
 
-        // write code here
-        cardPekka.payGourmet();
-        cardBrian.payEconomical();
-
-        System.out.println("Pekka: " +cardPekka);
-        System.out.println("Brian: " +cardBrian);
-
-        cardPekka.loadMoney(20);
-        cardBrian.payGourmet();
-
-        System.out.println("Pekka: " +cardPekka);
-        System.out.println("Brian: " +cardBrian);
-
-        cardPekka.payEconomical();
-        cardPekka.payEconomical();
-        cardBrian.loadMoney(50);
-
-        System.out.println("Pekka: " +cardPekka);
-        System.out.println("Brian: " +cardBrian);
+        int i = 0;
+        while ( i < 10) {
+            counter.next();
+            System.out.println("Value: " + counter );
+            i++;
+        }
     }
 }
