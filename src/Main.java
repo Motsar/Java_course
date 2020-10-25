@@ -11,8 +11,8 @@ public class Main {
             stats.addNumber(insertedNum);
             insertedNum = Integer.parseInt(reader.nextLine());
         }
-        System.out.println("Amount: " + stats.amountOfNumbers());
         System.out.println("sum: " + stats.sum());
-        System.out.println("average: " + stats.average());
+        System.out.println("sum of even: " + stats.evenNumSum());
+        System.out.println("sum of odd: " + stats.oddNumSum());
     }
 }

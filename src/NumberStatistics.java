@@ -31,6 +31,28 @@ public class NumberStatistics {
         return sum;
     }
 
+    public int evenNumSum() {
+        // code here
+        int sumOfEvenNumbers = 0;
+        for(int number : numbers){
+            if(number % 2 == 0 ){
+                sumOfEvenNumbers += number;
+            }
+        }
+        return sumOfEvenNumbers;
+    }
+
+    public int oddNumSum() {
+        // code here
+        int sumOfOddNumbers = 0;
+        for(int number : numbers){
+            if(number % 2 != 0 ){
+                sumOfOddNumbers += number;
+            }
+        }
+        return sumOfOddNumbers;
+    }
+
     public double average() {
         // code here
 
