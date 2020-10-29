@@ -1,22 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        CashRegister unicafeExactum = new CashRegister();
-        System.out.println( unicafeExactum );
+        Apartment studioManhattan = new Apartment(1, 16, 5500);
+        Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
+        Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
 
-        LyyraCard cardOfJim = new LyyraCard(2);
-
-        System.out.println("the card balance " + cardOfJim.balance() + " euros");
-
-        boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-
-        unicafeExactum.loadMoneyToCard(cardOfJim, 100);
-
-        succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-
-        System.out.println("the card balance " + cardOfJim.balance() + " euros");
-
-        System.out.println( unicafeExactum );
+        System.out.println( studioManhattan.larger(twoRoomsBrooklyn) );       // false
+        System.out.println( fourAndKitchenBronx.larger(twoRoomsBrooklyn) );   // true
     }
 }
