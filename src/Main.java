@@ -5,11 +5,14 @@ public class Main {
         double theChange = unicafeExactum.payEconomical(10);
         System.out.println("the change was " + theChange );
 
-        theChange = unicafeExactum.payEconomical(5);
-        System.out.println("the change was "  + theChange );
+        LyyraCard cardOfJim = new LyyraCard(7);
 
-        theChange = unicafeExactum.payGourmet(4);
-        System.out.println("the change was "  + theChange );
+        boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
+        System.out.println("payment success: " + succeeded);
+        succeeded = unicafeExactum.payGourmet(cardOfJim);
+        System.out.println("payment success: " + succeeded);
+        succeeded = unicafeExactum.payEconomical(cardOfJim);
+        System.out.println("payment success: " + succeeded);
 
         System.out.println( unicafeExactum );
     }
