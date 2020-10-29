@@ -2,9 +2,10 @@ public class BoundedCounter {
     private int value;
     private int upperLimit;
 
-    public BoundedCounter(int upperLimit) {
+    public BoundedCounter(int startValue) {
         // write code here
-        this.upperLimit= upperLimit;
+        this.upperLimit = 59;
+        this.value = startValue;
     }
 
     public void next() {
