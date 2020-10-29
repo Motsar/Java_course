@@ -1,3 +1,4 @@
+
 public class Student {
     private String name;
     private String studentNumber;
@@ -15,6 +16,6 @@ public class Student {
     }
 
     public String toString() {
-        return name + ' ' + '(' + studentNumber +')';
+        return this.name + " (" + this.studentNumber +")";
     }
 }
