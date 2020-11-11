@@ -10,8 +10,20 @@ public class GuessingGame {
 
     public void play(int lowerLimit, int upperLimit) {
         instructions(upperLimit, lowerLimit);
-
-        // write the game logic here
+        int i = 0;
+        while(i <= howManyTimesHalvable(upperLimit - lowerLimit)){
+            if(lowerLimit == upperLimit){
+                break;
+            }
+            if(this.isGreaterThan(this.average(upperLimit, lowerLimit))){
+                lowerLimit = this.average(lowerLimit, upperLimit);
+            } else {
+                upperLimit = this.average(lowerLimit, upperLimit);
+            }
+            System.out.println(lowerLimit + " - " + upperLimit);
+            i++;
+        }
+        System.out.println("The number you're thinking of is " + upperLimit);
     }
 
     // implement here the methods isGreaterThan and average
