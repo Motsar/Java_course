@@ -42,4 +42,8 @@ public class GuessingGame {
             return false;
         }
     }
+
+    public int average(int firstNumber, int secondNumber){
+        return (firstNumber+secondNumber)/2;
+    }
 }
