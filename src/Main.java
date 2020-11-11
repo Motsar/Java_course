@@ -2,25 +2,21 @@ import java.util.Arrays;
 
 public class Main{
     public static void main(String[] args) {
-                int[] original = {1, 2, 3, 4};
-                int[] copied =copy(original);
+        int[] original = {1, 2, 3, 4};
+        int[] reverse = reverseCopy(original);
+
+        // print both
+        System.out.println( "original: " +Arrays.toString(original));
+        System.out.println( "reversed: " +Arrays.toString(reverse));
+    }
 
 
-
-                // change the copied
-                copied[0] = 99;
-
-                // print both
-                System.out.println( "original: " + Arrays.toString(original));
-                System.out.println( "copied: " + Arrays.toString(copied));
-                }
-
-
-
-    public static int[] copy(int[] array) {
+    public static int[] reverseCopy(int[] array) {
         int[] newArray = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
+        int rI = array.length-1;
+        for (int i = 0; i<array.length;i++) {
+            newArray[i] = array[rI];
+            rI -=1;
         }
         return newArray;
     }
