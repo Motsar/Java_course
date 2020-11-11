@@ -29,6 +29,16 @@ public class Person {
         return this.birthday.earlier(compared.birthday);
     }
 
+    public Person(String name, MyDate birthday){
+        this.name=name;
+        this.birthday= birthday;
+    }
+
+    public Person(String name){
+        this.name=name;
+        this.birthday = new MyDate(Calendar.getInstance().get(Calendar.DATE),Calendar.getInstance().get(Calendar.MONTH) + 1,Calendar.getInstance().get(Calendar.YEAR));
+    }
+
     public String toString() {
         return this.name +", born "+ this.birthday;
     }
