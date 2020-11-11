@@ -5,7 +5,6 @@ public class NightSky {
     private int width;
     private int height;
 
-
     public NightSky(double density) {
         this.density = density;
         this.width = 20;
@@ -35,4 +34,12 @@ public class NightSky {
         }
         System.out.println();
     }
+
+    public void print() {
+        for (int i = 0; i <= this.height; i++) {
+            this.printLine();
+        }
+    }
+
+
 }
