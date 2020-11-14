@@ -25,7 +25,7 @@ public class Burger {
     }
 
     public void addSupplement(int selectedSupplement){
-        if(selectedSupplement!=0){
+        if(selectedSupplement!=0 && selectedSupplement<=this.Supplement.size()){
             this.addedSupplement.add(this.Supplement.get(selectedSupplement-1));
             this.price+=this.supplementPrice;
         }
