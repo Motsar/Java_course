@@ -1,9 +1,22 @@
-import java.util.ArrayList;
-
-public class Main{
+public class Main {
     public static void main(String[] args) {
-        GuessingGame game = new GuessingGame();
-        game.play(45,150);
+        for (int i = 9; i >=0; i--) {
+            System.out.println(numberLine(i));
+        }
+    }
+
+    public  static StringBuilder numberLine(int currnum) {
+        int startNum= currnum;
+        StringBuilder sb = new StringBuilder();
+        for (int iS = 9; iS>=0; iS--) {
+             if(startNum<iS){
+                sb.append(startNum);
+
+            }else{
+                 sb.append(iS);
+             }
+        }
+        return sb;
     }
 }
 
