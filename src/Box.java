@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Box {
     private double maxCap;
-    private ArrayList<ToBeStored> items;
+    public ArrayList<ToBeStored> items;
     private double currWeight;
     private int numOfItems;
 
@@ -22,8 +22,16 @@ public class Box {
         }
     }
 
+    public double weight() {
+        double weight = 0;
+        for(ToBeStored object : items){
+            weight+=object.weight();
+        }
+        return weight;
+    }
+
     @Override
     public String toString() {
-        return "Box: " + numOfItems + " things, total weight is " + currWeight + " kg.";
+        return "Box: " + numOfItems + " things, total weight is " + this.weight() + " kg.";
     }
 }
