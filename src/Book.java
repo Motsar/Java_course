@@ -1,29 +1,20 @@
-public class Book {
-    String title;
-    String publisher;
-    int year;
+public class Book implements ToBeStored{
+    String writer;
+    String name;
+    double weight;
 
-
-    public Book(String someTitle,String somePublisher, int aYear){
-        this.title = someTitle;
-        this.publisher = somePublisher;
-        this.year = aYear;
+    public Book(String writer, String name, double weight){
+        this.writer = writer;
+        this.name = name;
+        this.weight = weight;
     }
 
-    public String title(){
-        return title;
+    public double weight(){
+        return weight;
     }
 
-    public String publisher(){
-        return publisher;
-    }
-
-    public int year(){
-        return year;
-    }
-
+    @Override
     public String toString() {
-        return title + ',' + publisher+ ',' + year;
+        return writer+ ": " + name;
     }
-
 }
