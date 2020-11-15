@@ -1,7 +1,7 @@
 public class Book implements ToBeStored{
-    String writer;
-    String name;
-    double weight;
+    private String writer;
+    private String name;
+    private double weight;
 
     public Book(String writer, String name, double weight){
         this.writer = writer;

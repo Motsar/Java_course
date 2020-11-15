@@ -1,8 +1,8 @@
 public class CD implements ToBeStored{
-    String artist;
-    String album;
-    int publishingYear;
-    double weight = 0.1;
+    private String artist;
+    private String album;
+    private int publishingYear;
+    private double weight = 0.1;
 
     public CD(String artist, String album, int publishingYear){
         this.artist = artist;
