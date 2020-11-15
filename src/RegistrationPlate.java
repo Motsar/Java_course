@@ -10,7 +10,7 @@ public class RegistrationPlate {
     }
 
     public String toString(){
-        return country+ " "+regCode;
+        return country+ " " +regCode;
     }
 
     public boolean equals(Object object) {
