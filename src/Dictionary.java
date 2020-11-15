@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Dictionary {
     private HashMap<String, String> translations;
+    private ArrayList<String> translation = new ArrayList<String>();
 
     public Dictionary(){
         this.translations = new HashMap<String,String>();
@@ -29,5 +31,12 @@ public class Dictionary {
             amount+=1;
         }
         return amount;
+    }
+
+    public ArrayList<String> translationList(){
+        for (String key: this.translations.keySet()){
+            this.translation.add(key+" = "+this.translations.get(key));
+        }
+        return this.translation;
     }
 }
