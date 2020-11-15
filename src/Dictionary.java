@@ -22,4 +22,12 @@ public class Dictionary {
         string = string.toLowerCase();
         return string.trim();
     }
+
+    public int amountOfWords(){
+        int amount = 0;
+        for (String key: this.translations.keySet()){
+            amount+=1;
+        }
+        return amount;
+    }
 }
