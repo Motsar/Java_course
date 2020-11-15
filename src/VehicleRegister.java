@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+
 
 public class VehicleRegister {
     public HashMap<RegistrationPlate, String> owners;
@@ -28,5 +30,25 @@ public class VehicleRegister {
         }
         owners.remove(plate);
         return true;
+    }
+
+    public void printRegistrationPlates(){
+        for (RegistrationPlate plate: this.owners.keySet()){
+            System.out.println(plate);
+        }
+    }
+
+    public void printOwners() {
+        ArrayList<String> buffer = new ArrayList<String>();
+        String toBuffer;
+        for (RegistrationPlate plate: this.owners.keySet()){
+            toBuffer = this.owners.get(plate);
+            if(!buffer.contains(toBuffer)){
+                buffer.add(toBuffer);
+            }
+        }
+        for(String owner : buffer){
+            System.out.println(owner);
+        }
     }
 }
