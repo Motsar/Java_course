@@ -2,13 +2,13 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, String> nicknames = new HashMap<String, String>();
-        nicknames.put("matti", "mage");
-        nicknames.put("mikael", "mixu");
-        nicknames.put("arto", "arppa");
+        Dictionary dictionary = new Dictionary();
+        dictionary.add("apina", "monkey");
+        dictionary.add("banaani", "banana");
+        dictionary.add("cembalo", "harpsichord");
 
-        String mikaelsNick = nicknames.get("mikael");
-        System.out.println(mikaelsNick);
+        System.out.println(dictionary.translate("apina"));
+        System.out.println(dictionary.translate("porkkana"));
 
     }
 }
