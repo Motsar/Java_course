@@ -20,4 +20,10 @@ public class ShoppingBasket {
         }
         return wholePrice;
     }
+
+    public void print() {
+        for(Purchase onePurchase: purchaseItems){
+            System.out.println(onePurchase.getProduct()+ ": " + onePurchase.getAmount());
+        }
+    }
 }

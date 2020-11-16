@@ -20,6 +20,14 @@ public class Purchase {
         this.amount+=1;
     }
 
+    public String getProduct(){
+        return this.product;
+    }
+
+    public int getAmount(){
+        return this.amount;
+    }
+
     public String toString(){
         return product+ ": " +amount;
     }
