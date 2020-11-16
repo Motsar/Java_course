@@ -1,4 +1,4 @@
-public class Card {
+public class Card implements Comparable<Card> {
     public static final int SPADES  = 0;
     public static final int DIAMONDS  = 1;
     public static final int HEARTS = 2;
@@ -50,11 +50,16 @@ public class Card {
         return suit;
     }
 
+
+    @Override
     public int compareTo(Card card) {
-        if (this.value == card.getValue()) {
-            return this.suit - card.getSuit();
+        if(this.value == card.getValue()) {
+            return 0;
+        } else if (this.value > card.getValue()) {
+            return 1;
         } else {
-            return this.value - card.getValue();
+            return -1;
         }
     }
+
 }

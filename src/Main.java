@@ -2,15 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Hand fullHouse = new Hand();
+        Hand hand = new Hand();
 
-        fullHouse.add( new Card(14, Card.SPADES) );
-        fullHouse.add( new Card(14, Card.CLUBS) );
-        fullHouse.add( new Card(14, Card.HEARTS) );
-        fullHouse.add( new Card(13, Card.CLUBS) );
-        fullHouse.add( new Card(13, Card.DIAMONDS) );
+        hand.add( new Card(2, Card.SPADES) );
+        hand.add( new Card(14, Card.CLUBS) );
+        hand.add( new Card(12, Card.HEARTS) );
+        hand.add( new Card(2, Card.CLUBS) );
 
-        fullHouse.print();
+        hand.sort();
+
+        hand.print();
     }
 }
 
