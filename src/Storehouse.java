@@ -6,13 +6,14 @@ import java.util.Set;
 public class Storehouse {
     private Map<String, Integer> storedItemPrice;
     private Map<String, Integer> storedItemStock;
+    private Set<String> productSet;
 
 
 
     public  Storehouse(){
         this.storedItemPrice = new HashMap<String, Integer>() {};
         this.storedItemStock = new HashMap<String, Integer>() {};
-
+        this.productSet = new HashSet<String>();
     }
 
     public void addProduct(String product, int price, int stock){
@@ -44,6 +45,13 @@ public class Storehouse {
             return false;
         }
         return false;
+    }
+
+    public Set<String> products(){
+        for(String product : storedItemStock.keySet()){
+            this.productSet.add(product);
+        }
+        return this.productSet;
     }
 
 }
