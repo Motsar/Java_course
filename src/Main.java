@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Card first = new Card(2, Card.DIAMONDS);
-        Card second = new Card(14, Card.CLUBS);
-        Card third = new Card(12, Card.HEARTS);
+        Hand fullHouse = new Hand();
 
-        System.out.println(first);
-        System.out.println(second);
-        System.out.println(third);
+        fullHouse.add( new Card(14, Card.SPADES) );
+        fullHouse.add( new Card(14, Card.CLUBS) );
+        fullHouse.add( new Card(14, Card.HEARTS) );
+        fullHouse.add( new Card(13, Card.CLUBS) );
+        fullHouse.add( new Card(13, Card.DIAMONDS) );
+
+        fullHouse.print();
     }
 }
 

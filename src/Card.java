@@ -49,4 +49,12 @@ public class Card {
     public int getSuit() {
         return suit;
     }
+
+    public int compareTo(Card card) {
+        if (this.value == card.getValue()) {
+            return this.suit - card.getSuit();
+        } else {
+            return this.value - card.getValue();
+        }
+    }
 }
