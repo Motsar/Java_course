@@ -10,9 +10,19 @@ public class ShoppingBasket {
     }
 
     public void add(String product, int price){
-        Purchase purchase =new Purchase( product, 1, price);
-        purchaseItems.add(purchase);
+        String found="";
+        for(Purchase onePurchase: purchaseItems){
+            if(onePurchase.getProduct()==product){
+                onePurchase.increaseAmount();
+                found = "yes";
+            }
+        }
+        if(found!="yes"){
+            Purchase purchase =new Purchase( product, 1, price);
+            purchaseItems.add(purchase);
+        }
     }
+
     public int price(){
         int wholePrice = 0;
         for(Purchase onePurchase: purchaseItems){
