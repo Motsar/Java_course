@@ -1,38 +1,36 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ShoppingBasket {
-    List<Purchase> purchaseItems;
+    public Map<String, Purchase> purchaseItems;
 
     public ShoppingBasket(){
-        this.purchaseItems = new ArrayList<Purchase>();
+        purchaseItems = new HashMap<>();
 
     }
 
     public void add(String product, int price){
-        String found="";
-        for(Purchase onePurchase: purchaseItems){
-            if(onePurchase.getProduct()==product){
-                onePurchase.increaseAmount();
-                found = "yes";
+
+                if(purchaseItems.containsKey(product)) {
+                    purchaseItems.get(product).increaseAmount();
+                }else{
+                    purchaseItems.put(product, new Purchase(product, 1,price));
+                }
+
             }
-        }
-        if(found!="yes"){
-            Purchase purchase =new Purchase( product, 1, price);
-            purchaseItems.add(purchase);
-        }
-    }
+
 
     public int price(){
         int wholePrice = 0;
-        for(Purchase onePurchase: purchaseItems){
+        for(Purchase onePurchase: purchaseItems.values()){
             wholePrice+=onePurchase.price();
         }
         return wholePrice;
     }
 
     public void print() {
-        for(Purchase onePurchase: purchaseItems){
+        for(Purchase onePurchase: purchaseItems.values()){
             System.out.println(onePurchase.getProduct()+ ": " + onePurchase.getAmount());
         }
     }
