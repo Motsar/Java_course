@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Storehouse store = new Storehouse();
-        store.addProduct("coffee", 5, 10);
-        store.addProduct("milk", 3, 20);
-        store.addProduct("milkbutter", 2, 55);
-        store.addProduct("bread", 7, 8);
+        Card first = new Card(2, Card.DIAMONDS);
+        Card second = new Card(14, Card.CLUBS);
+        Card third = new Card(12, Card.HEARTS);
 
-        Shop shop = new Shop(store, new Scanner(System.in));
-        shop.manage("Pekka");
+        System.out.println(first);
+        System.out.println(second);
+        System.out.println(third);
     }
 }
 
