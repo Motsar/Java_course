@@ -9,6 +9,7 @@ public class Book implements ToBeStored{
         this.weight = weight;
     }
 
+    @Override
     public double weight(){
         return weight;
     }
