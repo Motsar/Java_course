@@ -27,14 +27,11 @@ public class Thermometer implements Sensor {
 
     @Override
     public int measure() {
-        int randomNum = 0;
         Random number = new Random();
-        if(!isOn()){
-            System.out.println("sensor is off");
-        }else{
-            randomNum = number.nextInt(61) - 30;    
+        if(!state){ // if state is off
+            throw new IllegalArgumentException("Set Thermometer state to on before measuring it!.");
         }
-        return randomNum;
+        return number.nextInt(30 - -30) + -30; // random number between -30 to 30
     }
 
 

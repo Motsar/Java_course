@@ -4,6 +4,7 @@ public class ConstantSensor implements Sensor{
     private final int measurement;
 
 
+
     public ConstantSensor(int measurement){
         this.measurement = measurement;
     }

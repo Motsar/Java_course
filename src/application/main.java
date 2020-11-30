@@ -3,18 +3,21 @@ package application;
 
 public class main {
 
-        public static void main(String[] args) {
-            Thermometer Tartu = new Thermometer();
-            Thermometer Tallinn = new Thermometer();
-            Thermometer Põlva = new Thermometer();
-            Tallinn.on();
+    public static void main(String[] args) {
+        Sensor kumpula = new Thermometer();
+        kumpula.on();
+        System.out.println("the temperature in Kumpula is "+kumpula.measure() + " degrees");
 
+        Sensor kaisaniemi = new Thermometer();
+        Sensor helsinkiVantaa = new Thermometer();
 
-            System.out.println(Tartu.measure());
-            System.out.println( Tallinn.measure());
-            System.out.println(Põlva.measure() );
-            Põlva.off();
-            System.out.println(Põlva.measure() );
-        }
+        AverageSensor helsinkiArea = new AverageSensor();
+        helsinkiArea.addSensor(kumpula);
+        helsinkiArea.addSensor(kaisaniemi);
+        helsinkiArea.addSensor(helsinkiVantaa);
+
+        helsinkiArea.on();
+        System.out.println("the temperature in Helsinki area is "+helsinkiArea.measure() + " degrees");
+    }
 
 }
