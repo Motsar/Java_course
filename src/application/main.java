@@ -4,15 +4,17 @@ package application;
 public class main {
 
         public static void main(String[] args) {
-            ConstantSensor ten = new ConstantSensor(10);
-            ConstantSensor minusFive = new ConstantSensor(-5);
+            Thermometer Tartu = new Thermometer();
+            Thermometer Tallinn = new Thermometer();
+            Thermometer Põlva = new Thermometer();
+            Tallinn.on();
 
-            System.out.println( ten.measure() );
-            System.out.println( minusFive.measure() );
 
-            System.out.println( ten.isOn() );
-            ten.off();
-            System.out.println( ten.isOn() );
+            System.out.println(Tartu.measure());
+            System.out.println( Tallinn.measure());
+            System.out.println(Põlva.measure() );
+            Põlva.off();
+            System.out.println(Põlva.measure() );
         }
 
 }
