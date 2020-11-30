@@ -70,6 +70,9 @@ public class AverageSensor implements Sensor {
         this.sensors.add(name);
     }
 
+    public List<Integer> readings() {
 
+        return this.readings;
+    }
 
 }
