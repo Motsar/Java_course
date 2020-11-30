@@ -4,17 +4,32 @@ package moving;
 import moving.domain.Box;
 import moving.domain.Item;
 import moving.domain.Thing;
+import moving.logic.Packer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        Box movingBox =new Box(200);
-        movingBox.addThing(new Item("passport", 2));
-        movingBox.addThing(new Item("printer", 50));
-        movingBox.addThing(new Item("toothbrash", 1));
-        movingBox.addThing(new Item("circular saw", 100));
+        // the things we want to pack
+        List<Thing> things = new ArrayList<Thing>();
+        things.add(new Item("passport", 6));
+        things.add(new Item("toothbrash", 5));
+        things.add(new Item("book", 4));
+        things.add(new Item("circular saw", 8));
 
-        System.out.println(movingBox.getVolume());
+        // we create a packer which uses boxes whose valume is 10
+        Packer packer = new Packer(10);
+
+        // we ask our packer to pack things into boxes
+        List<Box> boxes = packer.packThings( things );
+
+        System.out.println("number of boxes: "+boxes.size());
+
+        for (Box box : boxes) {
+            System.out.println("  things in the box: "+box.getVolume()+" dm^3" + box);
+        }
     }
 }

@@ -30,4 +30,9 @@ public class Box implements Thing{
         }
         return totalVolume;
     }
+
+    @Override
+    public String toString() {
+        return " Box contains: " + items;
+    }
 }
