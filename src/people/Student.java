@@ -18,7 +18,9 @@ public class Student extends Person{
         return this.credit;
     }
 
-
+    public String toString() {
+        return super.toString() + "\n   Credits:" + credit;
+    }
 
 
 }
