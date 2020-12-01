@@ -23,14 +23,14 @@ public class BulkTank {
     }
 
     public double howMuchFreeSpace(){
-        return capacity-volume;
+        return this.capacity-this.volume;
     }
 
     public void addToTank(double amount){
         if(this.volume+amount<=this.capacity){
             this.volume+=amount;
         }else{
-            this.volume=capacity;
+            this.volume=this.capacity;
         }
     }
 
@@ -44,7 +44,7 @@ public class BulkTank {
     @Override
     public String toString() {
 
-        return Math.ceil(volume)+ "/" + Math.ceil(capacity);
+        return Math.round(getVolume()*10)/10.0+ "/" + getCapacity();
 
     }
 

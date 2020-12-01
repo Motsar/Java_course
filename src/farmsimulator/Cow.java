@@ -45,7 +45,10 @@ public class Cow implements Milkable,Alive{
 
     @Override
     public double milk() {
-        return amountOfMilk = 0;
+        double buffer = this.amountOfMilk;
+        this.amountOfMilk = 0;
+        return buffer;
+
     }
 
     @Override
@@ -61,7 +64,7 @@ public class Cow implements Milkable,Alive{
 
     @Override
     public String toString() {
-        return this.name + " " + Math.ceil(this.amountOfMilk) + "/" + Math.ceil(this.udderCapacity);
+        return this.name + " " + Math.round(this.amountOfMilk*10)/10.0 + "/" + Math.ceil(this.udderCapacity);
     }
 
 
