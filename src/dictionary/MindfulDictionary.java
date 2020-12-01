@@ -1,11 +1,8 @@
 package dictionary;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.util.*;
 
 
 public class MindfulDictionary {
@@ -13,7 +10,29 @@ public class MindfulDictionary {
     private String file;
     private Map<String, String> dictionary = new HashMap<String, String>();
 
+    public MindfulDictionary(String file) {
 
+        this.file = file;
+    }
+
+    public boolean load() {
+
+        try {
+            File f = new File(file);
+            Scanner r = new Scanner(f);
+
+            while (r.hasNextLine()) {
+                String string = r.nextLine();
+                String[] parts = string.split(":");
+                dictionary.put(parts[0], parts[1]);
+
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
 
     public void add(String word, String translation) {
 
