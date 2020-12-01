@@ -2,6 +2,7 @@ package dictionary;
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.*;
 
 
@@ -32,6 +33,22 @@ public class MindfulDictionary {
             return false;
         }
 
+    }
+
+    public boolean save() {
+
+        try {
+            FileWriter writer = new FileWriter(file);
+
+            for (String key : dictionary.keySet()) {
+                writer.write(key + ":" + dictionary.get(key) + "\n");
+            }
+            writer.close();
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void add(String word, String translation) {

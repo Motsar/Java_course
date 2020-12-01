@@ -1,3 +1,6 @@
-apina:monkey
-alla oleva:below
-olut:beer
+saapad:boots
+selg:back
+soojus:warmth
+maja:house
+kala:fish
+trenn:training
